@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+        section{
+            height: 100vh;
+            position: sticky;
+            top: 0;
+
+            h1{
+                font-family: Bahnschrift Light;
+            }
+            button{
+                cursor: pointer;
+                transition: 1s;
+                color: rgb(255, 255, 255);
+            }
+            button:hover{
+                color: rgb(18, 9, 62);
+            }
+        }
+        
+        section:nth-of-type(1){
+            background:linear-gradient(10deg,rgb(146, 163, 203), rgb(227, 143, 227));
+
+            header{
+                width: calc(100% - 150px);
+                height: 15vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 auto;
+                color: rgb(65, 105, 225);
+                font-family: Bahnschrift Light;
+
+                .logo{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    background:linear-gradient(10deg,rgb(146, 163, 203), rgb(227, 143, 227));
+                    box-shadow: -1px -1px 3px rgb(255, 255, 255);
+
+                    h1{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 5px;
+                        background:linear-gradient(10deg,rgba(227, 143, 227, 0.448),rgb(146, 163, 203));
+                        position: relative;
+                        left: 10px;
+                        top: -10px;
+                        box-shadow: 1px 1px 3px rgb(255, 253, 253);
+                    }
+                }
+            }
+            nav{
+                width: 320px;
+                display: flex;
+                justify-content: space-between;
+
+                button{
+                    padding: 10px 30px;
+                    margin-top: -10px;
+                    border: 0;
+                    border-radius: 5px;
+                    background-color: rgb(65, 105, 225);
+                }
+            }
+            nav a{
+                text-decoration: none;
+                color: black;
+            }
+            .content{
+                height: 100%;
+                display: flex;
+
+                .text{
+                    width: 50%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    padding: 100px 0 0 60px;
+
+                    h1,p,button{
+                        margin: 15px;
+                        font-family: Bahnschrift Light;
+                    }
+                    h1{
+                        font-size: 3rem;
+                    }
+                    span{
+                        color: rgb(65, 105, 225);
+                    }
+                    button{
+                        padding: 15px 50px;
+                        border: 0;
+                        border-radius: 5px;
+                        background-color: rgb(65, 105, 225);
+                        font-weight: bold;
+                    }
+                }
+                .picture{
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center; 
+                    justify-content: center;
+
+                    img{
+                        width: 430px;
+                        height: 550px;
+                    }
+                }
+            }
+        }
+        /*-----------------------------------------------------------------------------*/
+        section:nth-of-type(2){
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .content{
+                width: 85%;
+                height: 80%;
+                display: flex;
+                justify-content: space-between;
+            }
+            img{
+                width: 500px;
+                height: 100%;
+            }
+            .text{
+                width: 50%;
+                margin-right: 30px;
+            }
+            h1,p,button{
+                margin: 10px;
+                font-family: Bahnschrift Light;
+            }
+            button{
+                padding: 15px 150px;
+                border: none;
+                border-radius: 5px;
+                margin-top: 30px;
+                background-color: rgb(65, 105, 225);
+            }
+            h1{
+                color: rgb(65, 105, 225);
+                font-size: 2rem;
+            }
+            p{
+                line-height: 22px;
+            }
+        }
+        /*-------------------------------------------------------------------------*/
+        section:nth-of-type(3){
+           background-color: rgb(241, 241, 241);
+           overflow: hidden;
+           box-shadow: 0 0 50px rgb(189, 189, 189);
+
+           header{
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            margin: 0 auto;
+            margin-top: 30px;
+           }
+           .content{
+            height: 80%;
+            width: 90%;
+            margin: -30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           }
+           .box{
+            width: 390px;
+            height: 270px;
+            padding: 40px 0  0 30px;
+            box-sizing: border-box;
+            transition: 300ms;
+
+            h1{
+                margin: 15px 0 15px 0;
+            }
+            
+           }
+           .box-two:hover,.box-three:hover{
+             border-left: 2px solid  rgb(65, 105, 225);
+           }
+           .box:hover h1,.box:hover i{
+            color: rgb(65, 105, 225);
+           }
+
+           .box-two{
+            border-left: 2px grey solid;
+           }
+           .box-three{
+            border-left: 2px grey solid;
+           }
+        }
+        /*---------------------------------------------------------------------------*/
+        section:nth-of-type(4){
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 50px rgb(193, 193, 193);
+
+            header{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            nav{
+                display:flex;
+                justify-content: center;
+                padding: 25px;
+                background:linear-gradient(10deg,rgb(146, 163, 203), rgb(227, 143, 227));
+            }
+            nav a{
+                margin: 0 15px;
+                text-decoration: none;
+                color: black;
+                font-family: Bahnschrift Light;
+            }
+            .content{
+                height: 70%;
+                width: 90%;
+                margin: 0 auto;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+            }
+            img{
+                width: 400px;
+                height: 300px;
+            }
+        }
+        /*-------------------------------------------------------------------------------------*/
+        section:nth-of-type(5){
+            background-color: rgb(241, 241, 241);
+            box-shadow: 0 0 50px rgb(193, 193, 193);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            header{
+                padding-top: 50px;
+                padding-left: 50px;
+
+                span{
+                    color: rgb(65, 105, 225);
+                }
+            }
+
+            .accordion{
+                width: 60%;
+                height: auto;
+                padding: 10px;
+                border-radius: 3px;
+                margin: 0 auto;
+                /* padding-top: 100px; */
+            }
+        
+            label{
+                height: 40px;
+                width: 96%;
+                display: block;
+                padding: 10px;
+                cursor: pointer;
+                margin-top: 5px;
+                border-radius: 3px;
+                line-height: 30px;
+                font-family: papyrus;
+                font-weight: bold;
+                transition: 300ms;
+                border-bottom: 1px solid gray;
+            }
+            label:hover{
+                color: rgb(65, 105, 225);
+            }
+            input{
+                display: none;
+            }
+            .content{
+                margin: 10px;
+                max-height: 0;
+                overflow: hidden;
+                transition: 1s;
+                line-height: 25px;
+                color: gray;
+            }
+            input:checked ~ .content{
+                max-height: 250px;
+                transition: 2s;
+            }
+
+            footer{
+                height: 10vh;
+                background-color: rgb(65, 105, 225);    
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                small{
+                    color: white;
+                    text-align: center;
+                }
+            }
+    }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <section>
+           <header>
+                <div class="logo">
+                   <h1></h1>
+                </div>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Products</a>
+                    <a href="#">About</a>
+                    <a href="">
+                        <button>Contact</button>
+                    </a>
+                </nav>
+           </header>
+
+           <div class="content">
+                <div class="text">
+                    <h1>
+                        <span>Discover</span> the <br> Fututure of Tech
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut neque harum cum, ipsam distinctio obcaecati itaque. Enim id voluptatibus nostrum! 
+                    </p>
+                    <button>Shop Now</button>
+                </div>
+
+                <div class="picture">
+                    <img src="images/12.png" alt="">
+                </div>
+           </div>
+        </section>
+        <!--------------------------------------------------------------->
+        <section>
+           <div class="content">
+                <img src="images/1.jpeg" alt="">
+                <div class="text">
+                    <h1>About TechGear Hub</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, nisi corporis exercitationem rem expedita repellendus facilis itaque sit recusandae vero minima? Veniam sint exercitationem nostrum alias vel, voluptate nisi autem eveniet, laborum rerum modi! Sint quia corporis eius facilis? Tempore fuga, totam, sit omnis quo nemo vero veritatis reiciendis adipisci culpa facere libero ex molestiae officia eligendi? Vitae, 
+                        deserunt laborum beatae eveniet expedita cum totam possimus dolor nostrum! Omnis ipsam modi recusandae 
+                        deserunt laborum.<br><br> numquam cupiditate esse hic eum nostrum accusamus quis voluptate velit maxime culpa est, exercitationem, quas at aperiam, nobis obcaecati id ut in iste. Molestiae vero sit reiciendis debitis sint velit vel veritatis accusantium quae minima expedita alias voluptate similique officiis voluptatum obcaecati adipisci vitae, corporis omnis dolor animi rerum ipsam quaerat. Quos nostrum consectetur non, ad, facilis fuga quo neque veritatis iste quas architecto. 
+                    </p>
+                    <button>Read More</button>
+                </div>
+           </div>
+        </section>
+        <!--------------------------------------------------------------->
+        <section>
+           <header>
+                <h1>Key Features</h1>
+           </header>
+           <div class="content">
+                <div class="box">
+                    <i>icon</i>
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione veniam nobis minima quia? Necessitatibus quam hic obcaecati error ab ipsum aspernatur, autem facilis a perferendis molestiae, exercitationem eum nobis.</p>
+                </div>
+                <div class="box box-two">
+                    <i>icon</i>
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione veniam nobis minima quia? Necessitatibus quam hic obcaecati error ab ipsum aspernatur, autem facilis a perferendis molestiae, exercitationem eum nobis.</p>
+                </div>
+                <div class="box box-three">
+                    <i>icon</i>
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ratione veniam nobis minima quia? Necessitatibus quam hic obcaecati error ab ipsum aspernatur, autem facilis a perferendis molestiae, exercitationem eum nobis.</p>
+                </div>
+           </div>
+        </section>
+        <!------------------------------------------------------------->
+        <section>
+            <header>
+                <h1>Our Products</h1>
+            </header>
+            <nav>
+                <a href="#">All</a>
+                <a href="#">Vitual Reality</a>
+                <a href="#">Headphones</a>
+            </nav>
+            <div class="content">
+                <img src="images/1.jpeg" alt="">
+                <img src="images/6.jpg" alt="">
+                <img src="images/11.jfif " alt="">
+            </div>
+        </section>
+        <!------------------------------------------------------------>
+        <section>
+            <header>
+                <h1>Most frequently asked <br> 
+                <span>questions</span></h1>
+            </header>
+                <div class="accordion">
+                <div class="option-one">
+                    <input type="radio" id="radio1" name="radio">
+                    <label for="radio1">Cascading style sheet?</label>
+                    <div class="content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo iure earum nobis est, quo quas necessitatibus molestiae alias, dolorum culpa dolor, eius distinctio excepturi hic ratione labore iste placeat! Blanditiis pariatur ratione sed minus, repellendus voluptatum perferendis numquam minima eaque explicabo deleniti commodi ad inventore voluptatibus quas repellat vitae nisi!</p>
+                    </div>
+                </div>
+
+                <div class="option-two">
+                    <input type="radio" id="radio2" name="radio">
+                    <label for="radio2">HyperText markup language?</label>
+                    <div class="content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo iure earum nobis est, quo quas necessitatibus molestiae alias, dolorum culpa dolor, eius distinctio excepturi hic ratione labore iste placeat! Blanditiis pariatur ratione sed minus, repellendus voluptatum perferendis numquam minima eaque explicabo deleniti commodi ad inventore voluptatibus quas repellat vitae nisi!</p>
+                    </div>
+                </div>
+
+                <div class="option-three">
+                    <input type="radio" id="radio3" name="radio">
+                    <label for="radio3">Java -  Script?</label>
+                    <div class="content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo iure earum nobis est, quo quas necessitatibus molestiae alias, dolorum culpa dolor, eius distinctio excepturi hic ratione labore iste placeat! Blanditiis pariatur ratione sed minus, repellendus voluptatum perferendis numquam minima eaque explicabo deleniti commodi ad inventore voluptatibus quas repellat vitae nisi!</p>
+                    </div>
+                </div>
+
+                <div class="option-four">
+                    <input type="radio" id="radio4" name="radio">
+                    <label for="radio4">ECMA -  Script?</label>
+                    <div class="content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. N.................... quas necessitatibus molestiae alias, dolorum culpa dolor, eius distincti________________c ratione labore iste placeat! Blanditiis pariatur ratione sed minus, repellendus voluptatum perferendis numquam minima eaque explicabo deleniti commodi ad inventore voluptatibus quas repellat vitae nisi!</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <small> &COPY; The content of this websites is copyrighted by the organisazation. Using any content without permision <br>
+                may be breaking the law.</small>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
